@@ -94,6 +94,35 @@ function App() {
   }
   
   
+  function factorial(n){
+    //Base Case
+    if (n === 1){
+      return n
+    }    
+    //General Case
+    else {
+      let fct = n * factorial(n - 1)
+      return fct
+    }
+  }
+  console.log(factorial(5))
+  
+  
+  function maze(path){
+    //Base Case
+  }
+  
+  let mySmallMaze = [
+    [' ', ' ', ' '],
+    [' ', '*', ' '],
+    [' ', ' ', 'e']
+  ];
+  
+  maze(mySmallMaze);
+    
+    let arr = new Array(3);
+    console.log(arr)
+    
   function toBinary(x) {
     if(x <= 1) {
       return x.toString();
@@ -108,12 +137,14 @@ function App() {
   return (
     <div className="App">
     
-      <div>{countSheep(3)}</div>
-      <div>{powerCalculator(10, 2)}</div>
-      <div>{reverseString('123456789')}</div>
-      <div>{toBinary(63)}</div>
-      <div>{triangleNumber(6)}</div>
-      <div>{stringSplitter('02/20/2020', '/')}</div>
+      <div>Count Sheep - {countSheep(3)}</div>
+      <div>Power Calculator - {powerCalculator(10, 2)}</div>
+      <div>Reverse String - {reverseString('123456789')}</div>
+      <div>To Binary - {toBinary(63)}</div>
+      <div>Triangle Number - {triangleNumber(6)}</div>
+      <div>String Splitter{stringSplitter('02/20/2020', '/')}</div>
+      <div>Fibonacci - {fibonacci(7)}</div>
+      <div>Factorial - {factorial(5)}</div>
       
 
     </div>
