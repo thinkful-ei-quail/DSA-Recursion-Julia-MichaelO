@@ -142,7 +142,7 @@ function App() {
       <div>Reverse String - {reverseString('123456789')}</div>
       <div>To Binary - {toBinary(63)}</div>
       <div>Triangle Number - {triangleNumber(6)}</div>
-      <div>String Splitter{stringSplitter('02/20/2020', '/')}</div>
+      <div>String Splitter - {stringSplitter('02/20/2020', '/')}</div>
       <div>Fibonacci - {fibonacci(7)}</div>
       <div>Factorial - {factorial(5)}</div>
       
