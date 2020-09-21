@@ -14,9 +14,6 @@ function App() {
     }
   }
   
-  let expw = Math.pow(10,0)
-  
-  console.log(expw)
   
   function powerCalculator(base, exp) {
     //Base Case
@@ -30,11 +27,57 @@ function App() {
     }
   }
   
+  
+  
+  function reverseString (str) {
+    //Base Case
+    if (str === ''){
+      return '';
+    }
+    //General Case
+    else {
+      let revStr = str[str.length - 1];
+      return revStr + reverseString(str.slice(0, -1));
+    }
+  }
+  
+  function triangleNumber(n) {
+    //Base Case
+    if (n == 1) {
+      return '*'
+    }
+    else {
+      let triangle = '* '
+        triangle = triangle.repeat(n) + '\n' + (triangleNumber(n - 1))
+      return triangle;
+    }
+  }
+  
+  console.log(triangleNumber(6));
+  
+  let star = '*'
+  console.log(star.repeat(6))
+  
+  function toBinary(x) {
+    if(x <= 1) {
+      return x.toString();
+    }
+    else {
+      const lsb = (x % 2).toString();
+      const robs = Math.floor(x / 2);
+      return toBinary(robs) + lsb;
+    }
+  }
+    
   return (
     <div className="App">
     
       <div>{countSheep(3)}</div>
       <div>{powerCalculator(10, 2)}</div>
+      <div>{reverseString('123456789')}</div>
+      <div>{toBinary(63)}</div>
+      <div>{triangleNumber(6)}</div>
+      
 
     </div>
   );
