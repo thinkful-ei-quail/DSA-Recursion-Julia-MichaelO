@@ -46,17 +46,53 @@ function App() {
     if (n == 1) {
       return '*'
     }
+    //General Case
     else {
       let triangle = '* '
         triangle = triangle.repeat(n) + '\n' + (triangleNumber(n - 1))
       return triangle;
     }
-  }
-  
+  }  
   console.log(triangleNumber(6));
   
   let star = '*'
   console.log(star.repeat(6))
+  
+  function stringSplitter (str, del){
+    //Base Case
+    if ( str === ''){
+      return ''
+    }
+    //General Case
+    else if (str.charAt(0) === del){
+      return stringSplitter(str.substr(1), del)
+    }
+    else{
+      return str.charAt(0) + '\n' + stringSplitter(str.substr(1), del);
+    }
+  }  
+  console.log(stringSplitter('02/20/2020', '/'))
+  
+  
+  //Memoization
+  const cache = {0: 0, 1: 1}
+  function fibonacci(n){
+    //Base Case
+    if (cache[n]) return cache[n]
+    if (n < 2) {
+      return n
+    } 
+    //General Case  
+    else {
+      let num = fibonacci(n - 1) + fibonacci(n - 2)  
+      cache[n] = num
+      return num
+    } 
+  }  
+  for (let i = 0 ; i <= 100; i++) {
+    console.log(fibonacci(i))
+  }
+  
   
   function toBinary(x) {
     if(x <= 1) {
@@ -77,6 +113,7 @@ function App() {
       <div>{reverseString('123456789')}</div>
       <div>{toBinary(63)}</div>
       <div>{triangleNumber(6)}</div>
+      <div>{stringSplitter('02/20/2020', '/')}</div>
       
 
     </div>
